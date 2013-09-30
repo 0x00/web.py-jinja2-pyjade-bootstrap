@@ -1,0 +1,7 @@
+mixin testen(name,n2)
+	li #{name} and #{n2}
+mixin active_li(name, activetab)
+	if name == activetab
+		li(class='active')
+	else
+		li

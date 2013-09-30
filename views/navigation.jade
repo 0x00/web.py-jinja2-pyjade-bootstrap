@@ -1,0 +1,28 @@
+mixin li(name, activetab, link, content)
+	if name == activetab
+		li(class='active')
+			a(href='#{link}') #{content}
+	else
+		li
+			a(href='#{link}') #{content}
+
+
+div(class='.navbar navbar-inverse navbar-fixed-top')
+	.container
+		.navbar-header
+			button(type='button', class='navbar-toggle', data-toggle="collapse", data-target=".navbar-collapse")
+				span(class='icon-bar')
+				span(class='icon-bar')
+				span(class='icon-bar')
+			a(class='navbar-brand', href='#') web.py-jinja2-pyjade webapp
+		.navbar-collapse.collapse
+			ul(class="nav navbar-nav")
+				+li('start', activetab, '/', 'Start')
+				+li('bla1', activetab, '/1', 'Blabla')
+				+li('bla2', activetab, '/2', 'Lalala')
+				form(class='navbar-form navbar-right')
+					a(href='#')
+						div(class="btn btn-danger")	Button!
+					select(name='yoman', class='selectpicker', data-style='btn-info')
+						option(value="1") Select!
+
